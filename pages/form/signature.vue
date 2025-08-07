@@ -3,43 +3,68 @@
     <h1>Signature</h1>
     <p>A lightweight Vue 3 component that provides a responsive <span>{{ '<canvas>' }}</span> for signatures.</p>
     <div>
-      <signature ref="signatureRef" />
-      <button @click="downloadImage">Download Signature</button>
-    </div>
-    <div>
       <h2>Installation</h2>
       <div>
         <pre><code class="language-js">
+// if you want to install all component from melisa-ui
 npm install melisa-ui
-        </code></pre>
-      </div>
-      <p>OR, if you only need signature component:</p>
-      <div>
-        <pre><code class="language-js">
+
+// if you need signature with other form component
+npm install @melisa-ui/form
+
+// if you only need signature component
 npm install @melisa-ui/signature
         </code></pre>
       </div>
     </div>
     <div>
       <h2>Usage</h2>
+
       <div>
+        <h3>1. Global Plugin</h3>
         <pre><code class="language-js">
+// main.ts
+import { createApp } from 'vue'
+import App from './App.vue'
+import Signature from '@melisa-ui/signature'
+import '@melisa-ui/signature/dist/signature.css'
+
+const app = createApp(App)
+app.use(Signature)
+app.mount('#app')
+</code></pre>
+      </div>
+      <div style="margin-top: 20px;">
+        <pre><code class="language-js">
+// app.vue
+&lt;template&gt;
+  &lt;signature /&gt;
+&lt;/template&gt;
+</code></pre>
+      </div>
+      <div>
+        <h3>2. Named Import (Recommended)</h3>
+        <pre><code class="language-js">
+// app.vue
 &lt;script&gt;
-import { ref } from 'vue'
 import { Signature } from '@melisa-ui/signature' // OR import { Signature } from 'melisa-ui
 import '@melisa-ui/signature/dist/signature.css' // OR import 'melisa-ui/dist/index.css'
 &lt;/script&gt;
 
 &lt;template&gt;
   &lt;div&gt;
-    &lt;signature ref="signatureRef" responsive /&gt;
+    &lt;signature responsive /&gt;
   &lt;/div&gt;
 &lt;/template&gt;
 </code></pre>
-
       </div>
     </div>
     <div>
+      <h2>Basic Usage</h2>
+      <div>
+        <signature ref="signatureRef" />
+        <button @click="downloadImage">Download Signature</button>
+      </div>
     </div>
   </div>
 </template>
