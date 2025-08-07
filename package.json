@@ -10,8 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@melisa-ui/signature": "^0.1.1",
     "nuxt": "^3.17.7",
+    "prismjs": "^1.30.0",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/prismjs": "^1.26.5"
   }
 }
